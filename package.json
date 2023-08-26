@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "node-mysql2-fetch",
+  "version": "1.0.0",
+  "description": "send fetched data to a mysql db",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [
+    "mysql",
+    "fetch"
+  ],
+  "author": "paulolima",
+  "license": "ISC"
+}
