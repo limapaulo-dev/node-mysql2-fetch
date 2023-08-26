@@ -5,12 +5,12 @@
     "mysql2": "^3.6.0"
   },
   "scripts": {
-    "start": "node index.html"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "name": "node-mysql2-fetch",
   "version": "1.0.0",
   "description": "send fetched data to a mysql db",
-  "main": "server.js",
+  "main": "index.js",
   "keywords": [
     "mysql",
     "fetch"

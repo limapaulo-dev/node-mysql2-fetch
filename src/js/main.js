@@ -1,6 +1,8 @@
-const mysql = require('mysql2')
+
 
 const inputs = document.querySelectorAll('input.form');
+
+const cepFormGroup = document.querySelector('#form-group-cep');
 
 const cep = document.querySelector('#cep');
 const logradouro = document.querySelector('#logradouro');
@@ -8,39 +10,9 @@ const bairro = document.querySelector('#bairro');
 const localidade = document.querySelector('#localidade');
 const uf = document.querySelector('#uf');
 
-const dbOpt = {
-    url : 'localholst',
-    user: 'root',
-    pw : 'mysqlpw',
-    db: 'node_mysql'
-}
-
-const getConn = (mysql) => {
-    const conn = mysql.createConnection(dbOpt);
-
-    conn.connect((err)=>{
-        if (err) throw console.log(err);
-
-        const createTBAdress = `create table if not exists cep (
-            id integer auto_increment not null primary key,
-            cep integer(9) not null unique,
-            logradouro varchar(255),
-            bairro varchar(255),
-            cidade varchar(25),
-            uf char(2)
-        )`
-
-        conn.query(createTBAdress, (err, result)=>{
-            console.log(err)
-            console.log(result)
-        });
-
-    });
 
 
-}
-
-cep.addEventListener('blur', async () => {
+cepFormGroup.addEventListener('blur', async () => {
   let search = cep.value.replace('-', '');
   
   const options = {
@@ -58,13 +30,10 @@ cep.addEventListener('blur', async () => {
     logradouro.value = data.logradouro;
     bairro.value = data.bairro;
     localidade.value = data.localidade;
-    uf.value = data.uf;
-
-    getConn(mysql)
-   
+    uf.value = data.uf;  
   }  
 
   console.log(res);
   console.log(inputs);
-  console.log(cep);
+  console.log(cepFormGroup);
 });
