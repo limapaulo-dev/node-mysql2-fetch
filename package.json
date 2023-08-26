@@ -5,7 +5,7 @@
     "mysql2": "^3.6.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.html"
   },
   "name": "node-mysql2-fetch",
   "version": "1.0.0",
